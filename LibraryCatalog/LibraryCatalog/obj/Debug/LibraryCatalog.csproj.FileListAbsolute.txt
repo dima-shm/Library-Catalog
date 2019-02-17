@@ -91,3 +91,4 @@ D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\obj\Debug\LibraryCatalog
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\obj\Debug\LibraryCatalog.pdb
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\obj\Debug\LibraryCatalog.Migrations.InitialCreate.resources
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\obj\Debug\LibraryCatalog.csproj.GenerateResource.cache
+D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\obj\Debug\LibraryCatalog.Migrations.DataMigration.resources

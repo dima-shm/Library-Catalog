@@ -142,6 +142,10 @@
     <Compile Include="Migrations\201902170947589_InitialCreate.Designer.cs">
       <DependentUpon>201902170947589_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902170949319_DataMigration.cs" />
+    <Compile Include="Migrations\201902170949319_DataMigration.Designer.cs">
+      <DependentUpon>201902170949319_DataMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
@@ -210,6 +214,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201902170947589_InitialCreate.resx">
       <DependentUpon>201902170947589_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902170949319_DataMigration.resx">
+      <DependentUpon>201902170949319_DataMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
