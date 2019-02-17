@@ -7,14 +7,13 @@ using Lab_3.Models;
 
 namespace LibraryCatalog.Controllers
 {
-    public class BooksController : Controller
+    public class AuthorsController : Controller
     {
         private ApplicationContext db = new ApplicationContext();
 
         public ActionResult Index()
         {
-            var books = db.Books.Include(b => b.Author);
-            return View(books.ToList());
+            return View(db.Authors.ToList());
         }
 
         public ActionResult Details(int? id)
@@ -23,32 +22,30 @@ namespace LibraryCatalog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Books.Find(id);
-            if (book == null)
+            Author author = db.Authors.Find(id);
+            if (author == null)
             {
                 return HttpNotFound();
             }
-            return View(book);
+            return View(author);
         }
 
         public ActionResult Create()
         {
-            ViewBag.AuthorId = new SelectList(db.Authors, "Id", "Surname");
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create([Bind(Include = "Id,Title,AuthorId,Description,Year,NumPages,Price")] Book book)
+        public ActionResult Create([Bind(Include = "Id,Surname,Name,Patronymic")] Author author)
         {
             if (ModelState.IsValid)
             {
-                db.Books.Add(book);
+                db.Authors.Add(author);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AuthorId = new SelectList(db.Authors, "Id", "Surname", book.AuthorId);
-            return View(book);
+            return View(author);
         }
 
         public ActionResult Edit(int? id)
@@ -57,27 +54,24 @@ namespace LibraryCatalog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Books.Find(id);
-            if (book == null)
+            Author author = db.Authors.Find(id);
+            if (author == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.AuthorId = new SelectList(db.Authors, "Id", "Surname", book.AuthorId);
-            return View(book);
+            return View(author);
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,AuthorId,Description,Year,NumPages,Price")] Book book)
+        public ActionResult Edit([Bind(Include = "Id,Surname,Name,Patronymic")] Author author)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(book).State = EntityState.Modified;
+                db.Entry(author).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AuthorId = new SelectList(db.Authors, "Id", "Surname", book.AuthorId);
-            return View(book);
+            return View(author);
         }
 
         public ActionResult Delete(int? id)
@@ -86,19 +80,19 @@ namespace LibraryCatalog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Books.Find(id);
-            if (book == null)
+            Author author = db.Authors.Find(id);
+            if (author == null)
             {
                 return HttpNotFound();
             }
-            return View(book);
+            return View(author);
         }
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Book book = db.Books.Find(id);
-            db.Books.Remove(book);
+            Author author = db.Authors.Find(id);
+            db.Authors.Remove(author);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
