@@ -21,8 +21,6 @@
 
     @using (Html.BeginForm())
     {
-        @Html.AntiForgeryToken()
-
         <div class="form-actions no-color">
             <input type="submit" value="Удалить" class="btn btn-danger" /> |
             @Html.ActionLink("Вернуться к списку", "Index")
