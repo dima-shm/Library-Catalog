@@ -146,6 +146,10 @@
     <Compile Include="Migrations\201902170949319_DataMigration.Designer.cs">
       <DependentUpon>201902170949319_DataMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902171019537_UpdateBookModelMigration.cs" />
+    <Compile Include="Migrations\201902171019537_UpdateBookModelMigration.Designer.cs">
+      <DependentUpon>201902171019537_UpdateBookModelMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
@@ -217,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902170949319_DataMigration.resx">
       <DependentUpon>201902170949319_DataMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902171019537_UpdateBookModelMigration.resx">
+      <DependentUpon>201902171019537_UpdateBookModelMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

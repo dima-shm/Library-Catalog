@@ -20,8 +20,6 @@ namespace Lab_3.Models
 
         public int NumPages { get; set; }
 
-        public int Price { get; set; }
-
         public virtual Author Author { get; set; }
     }
 }
