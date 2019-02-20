@@ -138,17 +138,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201902170947589_InitialCreate.cs" />
-    <Compile Include="Migrations\201902170947589_InitialCreate.Designer.cs">
-      <DependentUpon>201902170947589_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902170949319_DataMigration.cs" />
-    <Compile Include="Migrations\201902170949319_DataMigration.Designer.cs">
-      <DependentUpon>201902170949319_DataMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902171019537_UpdateBookModelMigration.cs" />
-    <Compile Include="Migrations\201902171019537_UpdateBookModelMigration.Designer.cs">
-      <DependentUpon>201902171019537_UpdateBookModelMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201902200918445_DataMigration.cs" />
+    <Compile Include="Migrations\201902200918445_DataMigration.Designer.cs">
+      <DependentUpon>201902200918445_DataMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
@@ -216,14 +208,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201902170947589_InitialCreate.resx">
-      <DependentUpon>201902170947589_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902170949319_DataMigration.resx">
-      <DependentUpon>201902170949319_DataMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902171019537_UpdateBookModelMigration.resx">
-      <DependentUpon>201902171019537_UpdateBookModelMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201902200918445_DataMigration.resx">
+      <DependentUpon>201902200918445_DataMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,13 +7,13 @@ namespace LibraryCatalog.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class UpdateBookModelMigration : IMigrationMetadata
+    public sealed partial class DataMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateBookModelMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DataMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201902171019537_UpdateBookModelMigration"; }
+            get { return "201902200918445_DataMigration"; }
         }
         
         string IMigrationMetadata.Source

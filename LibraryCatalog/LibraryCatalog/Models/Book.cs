@@ -16,7 +16,7 @@ namespace Lab_3.Models
 
         public string Description { get; set; }
 
-        public DateTime Year { get; set; }
+        public int Year { get; set; }
 
         public int NumPages { get; set; }
 

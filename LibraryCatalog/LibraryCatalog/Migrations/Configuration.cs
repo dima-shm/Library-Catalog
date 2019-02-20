@@ -10,7 +10,6 @@ namespace LibraryCatalog.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Lab_3.Context.ApplicationContext";
         }
 
         protected override void Seed(Lab_3.Context.ApplicationContext context)

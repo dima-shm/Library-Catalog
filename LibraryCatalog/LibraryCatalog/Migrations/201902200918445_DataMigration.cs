@@ -3,7 +3,7 @@ namespace LibraryCatalog.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class DataMigration : DbMigration
     {
         public override void Up()
         {
@@ -26,9 +26,8 @@ namespace LibraryCatalog.Migrations
                         Title = c.String(),
                         AuthorId = c.Int(nullable: false),
                         Description = c.String(),
-                        Year = c.DateTime(nullable: false),
+                        Year = c.Int(nullable: false),
                         NumPages = c.Int(nullable: false),
-                        Price = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Authors", t => t.AuthorId, cascadeDelete: true)
