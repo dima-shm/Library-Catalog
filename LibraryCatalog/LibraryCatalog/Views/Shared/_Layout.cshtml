@@ -23,14 +23,12 @@
                 <ul class="nav navbar-nav mr-auto">
                     <li>@Html.ActionLink("Книги", "Index", "Books", null, new { style = "color:white" })</li>
                     <li>@Html.ActionLink("Авторы", "Index", "Authors", null, new { style = "color:white" })</li>
-                    <li>
-                        <form asp-controller="Books" asp-action="Index" class="form-inline" style="margin-top:8px">
-                            <input type="text" name="search" class="form-control mr-sm-2">
-                            <input type="submit" value="Поиск" class="btn btn-outline-success my-2 my-sm-0" />
-                        </form>
-                    </li>
-                </ul>  
-            </div>
+                </ul>
+                <form asp-controller="Books" asp-action="Index" class="form-inline navbar-right" style="margin-top:10px">
+                    <input type="text" name="search" placeholder="Поиск" class="form-control input-sm">
+                    <input type="submit" value="Поиск" class="btn btn-success btn-sm" />
+                </form>
+            </div>      
         </div>
     </div>
     <div class="container body-content">
