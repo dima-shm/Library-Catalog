@@ -18,15 +18,15 @@
     </tr>
     @foreach (var item in Model) {
     <tr>
-        <td>@Html.DisplayFor(modelItem => item.Author.Surname)</td>
-        <td>@Html.DisplayFor(modelItem => item.Title)</td>
-        <td>@Html.DisplayFor(modelItem => item.Description)</td>
-        <td>@Html.DisplayFor(modelItem => item.Year)</td>
-        <td>@Html.DisplayFor(modelItem => item.NumPages)</td>
+        <td>@item.Author.ToString()</td>
+        <td>@item.Title</td>
+        <td>@item.Description</td>
+        <td>@item.Year</td>
+        <td>@item.NumPages</td>
         <td>
-            @Html.ActionLink("Редактировать", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Детали", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
+            @Html.ActionLink("Детали", "Details", new { id = item.Id }) <br />
+            @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }, new { @class = "text-warning " }) <br />
+            @Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "text-danger" })
         </td>
     </tr>
     }

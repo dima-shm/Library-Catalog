@@ -33,7 +33,7 @@ namespace LibraryCatalog.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.AuthorId = new SelectList(db.Authors, "Id", "Surname");
+            ViewBag.Authors = db.Authors;
             return View();
         }
 
@@ -67,7 +67,6 @@ namespace LibraryCatalog.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Title,AuthorId,Description,Year,NumPages,Price")] Book book)
         {
             if (ModelState.IsValid)

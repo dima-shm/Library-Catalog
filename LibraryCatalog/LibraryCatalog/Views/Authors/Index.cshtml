@@ -16,13 +16,13 @@
     </tr>
     @foreach (var item in Model) {
     <tr>
-        <td>@Html.DisplayFor(modelItem => item.Surname)</td>
-        <td>@Html.DisplayFor(modelItem => item.Name)</td>
-        <td>@Html.DisplayFor(modelItem => item.Patronymic)</td>
+        <td>@item.Surname</td>
+        <td>@item.Name</td>
+        <td>@item.Patronymic</td>
         <td>
-            @Html.ActionLink("Редактировать", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Детали", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
+            @Html.ActionLink("Детали", "Details", new { id = item.Id }) <br />
+            @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }, new { @class = "text-warning " }) <br />
+            @Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "text-danger" })
         </td>
     </tr>
     }
