@@ -19,7 +19,7 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.Author.ToString()</td>
+            <td><a href="/Authors/Details/@item.Author.Id">@item.Author.ToString()</a></td>
             <td>@item.Title</td>
             <td>@item.Description</td>
             <td>@item.Year</td>
