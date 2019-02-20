@@ -11,9 +11,13 @@ namespace LibraryCatalog.Controllers
     {
         private ApplicationContext db = new ApplicationContext();
 
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             var books = db.Books.Include(b => b.Author);
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                books = books.Where(s => s.Title.Contains(searchString));
+            } 
             return View(books.ToList());
         }
 
