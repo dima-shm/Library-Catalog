@@ -17,7 +17,7 @@
                 <img style='width:150px; height:150px;' src="~/Images/book-icon.png" />
             </a>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-8">
             <h3><a href="/Books/Details/@item.Id">@item.Title</a></h3>
             <p>Автор книги: <a href="/Authors/Details/@item.Author.Id">@item.Author.ToString()</a></p>
             <hr />
@@ -26,7 +26,8 @@
             <hr />
             <h6>Год написания: @item.Year</h6>
             <h6>Количество страниц: @item.NumPages</h6>
-            <br />
+        </div>
+        <div class="col-sm-2">
             @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }, new { @class = "text-warning " }) <br />
             @Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "text-danger" })
         </div>
