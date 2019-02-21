@@ -66,7 +66,7 @@ namespace LibraryCatalog.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AuthorId = new SelectList(db.Authors, "Id", "Surname", book.AuthorId);
+            ViewBag.Authors = db.Authors;
             return View(book);
         }
 
