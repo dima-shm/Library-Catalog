@@ -7,28 +7,31 @@
 <p>
     @Html.ActionLink("Добавить книгу", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>Автор</th>
-        <th>Заголовок</th>
-        <th>Описание</th>
-        <th>Год публикации</th>
-        <th>Количество страниц</th>
-        <th></th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td><a href="/Authors/Details/@item.Author.Id">@item.Author.ToString()</a></td>
-            <td>@item.Title</td>
-            <td>@item.Description</td>
-            <td>@item.Year</td>
-            <td>@item.NumPages</td>
-            <td>
-                @Html.ActionLink("Детали", "Details", new { id = item.Id }) <br />
-                @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }, new { @class = "text-warning " }) <br />
-                @Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "text-danger" })
-            </td>
-        </tr>
-    }
-</table>
+<hr />
+<div class="container">
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-md-2">
+            <a href="/Books/Details/@item.Id">
+                <img style='width:150px; height:150px;' src="~/Images/book-icon.png" />
+            </a>
+        </div>
+        <div class="col-md-10">
+            <h3><a href="/Books/Details/@item.Id">@item.Title</a></h3>
+            <p>Автор книги: <a href="/Authors/Details/@item.Author.Id">@item.Author.ToString()</a></p>
+            <hr />
+            <h4>Описание</h4>
+            <h5>@item.Description</h5>
+            <hr />
+            <h6>Год написания: @item.Year</h6>
+            <h6>Количество страниц: @item.NumPages</h6>
+            <br />
+            @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }, new { @class = "text-warning " }) <br />
+            @Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "text-danger" })
+        </div>
+    </div>
+    <hr />
+    <br />
+}
+</div>
