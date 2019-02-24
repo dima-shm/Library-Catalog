@@ -98,3 +98,5 @@ D:\GitHub\Library-Catalog\LibraryCatalogWebApi\LibraryCatalogWebApi\obj\Debug\Li
 D:\GitHub\Library-Catalog\LibraryCatalogWebApi\LibraryCatalogWebApi\obj\Debug\LibraryCatalogWebApi.csproj.CopyComplete
 D:\GitHub\Library-Catalog\LibraryCatalogWebApi\LibraryCatalogWebApi\obj\Debug\LibraryCatalogWebApi.dll
 D:\GitHub\Library-Catalog\LibraryCatalogWebApi\LibraryCatalogWebApi\obj\Debug\LibraryCatalogWebApi.pdb
+D:\GitHub\Library-Catalog\LibraryCatalogWebApi\LibraryCatalogWebApi\obj\Debug\LibraryCatalogWebApi.Migrations.DataMigration.resources
+D:\GitHub\Library-Catalog\LibraryCatalogWebApi\LibraryCatalogWebApi\obj\Debug\LibraryCatalogWebApi.csproj.GenerateResource.cache
