@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Lab_3.Models
+namespace LibraryCatalog.Models
 {
     public class Author
     {
