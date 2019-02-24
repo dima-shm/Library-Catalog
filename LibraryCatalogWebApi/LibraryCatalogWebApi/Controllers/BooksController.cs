@@ -21,6 +21,17 @@ namespace LibraryCatalogWebApi.Controllers
 
         // GET: api/Books/5
         [ResponseType(typeof(Book))]
+        public IQueryable GetBook(string search)
+        {
+            if (search == null)
+            {
+                return null;
+            }
+            return db.Books.Where(s => s.Title.Contains(search) || s.Author.Surname.Contains(search));
+        }
+
+        // GET: api/Books/5
+        [ResponseType(typeof(Book))]
         public IHttpActionResult GetBook(int id)
         {
             Book book = db.Books.Find(id);

@@ -1,19 +1,28 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using Lab_3.Context;
-using Lab_3.Models;
+using LibraryCatalog.Models;
+using Newtonsoft.Json;
 
 namespace LibraryCatalog.Controllers
 {
     public class AuthorsController : Controller
     {
-        private ApplicationContext db = new ApplicationContext();
+        private const string APP_PATH = "http://localhost:60727/";
+
+        private HttpWebRequest request;
+
+        private HttpWebResponse response;
+
+        private List<Author> authors;
 
         public ActionResult Index()
         {
-            return View(db.Authors.ToList());
+            string responseString = GetResponseString(APP_PATH + "api/Authors/", "GET");
+            authors = JsonConvert.DeserializeObject<Author[]>(responseString).ToList();
+            return View(authors);
         }
 
         public ActionResult Details(int? id)
@@ -22,7 +31,8 @@ namespace LibraryCatalog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Author author = db.Authors.Find(id);
+            string responseString = GetResponseString(APP_PATH + "api/Authors/" + id, "GET");
+            Author author = JsonConvert.DeserializeObject<Author>(responseString);
             if (author == null)
             {
                 return HttpNotFound();
@@ -40,11 +50,9 @@ namespace LibraryCatalog.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Authors.Add(author);
-                db.SaveChanges();
+                GetResponseString(APP_PATH + "api/Authors/", "POST", JsonConvert.SerializeObject(author));
                 return RedirectToAction("Index");
             }
-
             return View(author);
         }
 
@@ -54,7 +62,8 @@ namespace LibraryCatalog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Author author = db.Authors.Find(id);
+            string responseString = GetResponseString(APP_PATH + "api/Authors/" + id, "GET");
+            Author author = JsonConvert.DeserializeObject<Author>(responseString);
             if (author == null)
             {
                 return HttpNotFound();
@@ -67,8 +76,7 @@ namespace LibraryCatalog.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(author).State = EntityState.Modified;
-                db.SaveChanges();
+                GetResponseString(APP_PATH + "api/Authors/" + author.Id, "PUT", JsonConvert.SerializeObject(author));
                 return RedirectToAction("Index");
             }
             return View(author);
@@ -80,7 +88,8 @@ namespace LibraryCatalog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Author author = db.Authors.Find(id);
+            string responseString = GetResponseString(APP_PATH + "api/Authors/" + id, "GET");
+            Author author = JsonConvert.DeserializeObject<Author>(responseString);
             if (author == null)
             {
                 return HttpNotFound();
@@ -91,19 +100,31 @@ namespace LibraryCatalog.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Author author = db.Authors.Find(id);
-            db.Authors.Remove(author);
-            db.SaveChanges();
+            GetResponseString(APP_PATH + "api/Authors/" + id, "DELETE");
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
+        private string GetResponseString(string requestUriString, string method, string body = null)
         {
-            if (disposing)
+            request = GetRequest(requestUriString, method, body);
+            response = (HttpWebResponse)request.GetResponse();
+            return new StreamReader(response.GetResponseStream()).ReadToEnd();
+        }
+
+        private HttpWebRequest GetRequest(string requestUriString, string method, string body = null)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestUriString);
+            request.ContentType = "application/json; charset=utf-8";
+            request.Method = method;
+            if (body != null)
             {
-                db.Dispose();
+                using (StreamWriter streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    streamWriter.Write(body);
+                    streamWriter.Flush();
+                }
             }
-            base.Dispose(disposing);
+            return request;
         }
     }
 }

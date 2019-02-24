@@ -48,8 +48,6 @@ D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\roslyn\vbc.rsp
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\roslyn\VBCSCompiler.exe
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\roslyn\VBCSCompiler.exe.config
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\Antlr3.Runtime.dll
-D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\EntityFramework.dll
-D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\EntityFramework.SqlServer.dll
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\Microsoft.AspNet.TelemetryCorrelation.dll
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\Microsoft.Web.Infrastructure.dll
@@ -63,8 +61,6 @@ D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\System.Web.WebPages.
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\System.Web.WebPages.dll
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\System.Web.WebPages.Razor.dll
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\WebGrease.dll
-D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\EntityFramework.xml
-D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\EntityFramework.SqlServer.xml
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\System.Web.Helpers.xml
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\System.Web.Mvc.xml
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\bin\System.Web.Optimization.xml
@@ -89,5 +85,3 @@ D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\obj\Debug\LibraryCatalog
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\obj\Debug\LibraryCatalog.csproj.CopyComplete
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\obj\Debug\LibraryCatalog.dll
 D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\obj\Debug\LibraryCatalog.pdb
-D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\obj\Debug\LibraryCatalog.Migrations.DataMigration.resources
-D:\GitHub\Library-Catalog\LibraryCatalog\LibraryCatalog\obj\Debug\LibraryCatalog.csproj.GenerateResource.cache

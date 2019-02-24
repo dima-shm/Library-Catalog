@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
 namespace LibraryCatalogWebApi.Models
 {
+    [KnownType(typeof(Author))]
     public class Book
     {
         [Key]
@@ -19,6 +21,6 @@ namespace LibraryCatalogWebApi.Models
 
         public int NumPages { get; set; }
 
-        public virtual Author Author { get; set; }
+        public Author Author { get; set; }
     }
 }
