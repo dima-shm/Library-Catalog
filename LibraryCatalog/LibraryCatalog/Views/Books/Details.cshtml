@@ -5,21 +5,44 @@
 
 <h2>@ViewBag.Title</h2>
 <hr />
-<div>
-    <dl class="dl-horizontal">
-        <dt>Автор</dt>
-        <dd><a href="/Authors/Details/@Model.Author.Id">@Model.Author.ToString()</a></dd>
-        <dt>Заголовок</dt>
-        <dd>@Model.Title</dd>
-        <dt>Описание</dt>
-        <dd>@Model.Description</dd>
-        <dt>Год публикации</dt>
-        <dd>@Model.Year</dd>
-        <dt>Количество страниц</dt>
-        <dd>@Model.NumPages</dd>
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Вернуться к списку", "Index")
-</p>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        <div class="form-group">
+            <label class="control-label col-md-2">Заголовок</label>
+            <div class="col-md-10">
+                @Model.Title
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Автор</label>
+            <div class="col-md-10">
+                @Model.Author.ToString();
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Описание</label>
+            <div class="col-md-10">
+                @Model.Description
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Год написания</label>
+            <div class="col-md-10">
+                @Model.Year
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Количество страниц</label>
+            <div class="col-md-10">
+                @Model.NumPages
+            </div>
+        </div>
+    </div>
+}
+    <p>
+        @Html.ActionLink("Редактировать", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Вернуться к списку", "Index")
+    </p>

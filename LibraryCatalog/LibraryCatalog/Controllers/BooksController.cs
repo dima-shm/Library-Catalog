@@ -42,6 +42,9 @@ namespace LibraryCatalog.Controllers
             }
             string responseString = GetResponseString(APP_PATH + "api/Books/" + id, "GET");
             Book book = JsonConvert.DeserializeObject<Book>(responseString);
+            responseString = GetResponseString(APP_PATH + "api/Authors/" + book.AuthorId, "GET");
+            Author author = JsonConvert.DeserializeObject<Author>(responseString);
+            book.Author = author;
             if (book == null)
             {
                 return HttpNotFound();
