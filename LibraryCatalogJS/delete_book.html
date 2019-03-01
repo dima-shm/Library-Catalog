@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удалить – приложение ASP.NET</title>
+    <link href="./delete_book_files/bootstrap.css" rel="stylesheet">
+    <link href="./delete_book_files/site.css" rel="stylesheet">
+    <script src="./delete_book_files/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" style="background-color:#337ab7; border-color:white;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:white;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="books.html" style="color:white">Каталог библиотеки</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav mr-auto">
+                    <li><a href="books.html" style="color:white">Книги</a></li>
+                    <li><a href="authors.html" style="color:white">Авторы</a></li>
+                </ul>
+                <form asp-controller="Books" asp-action="Index" class="form-inline navbar-right" style="margin-top:10px">
+                    <input type="text" name="search" placeholder="Поиск" class="form-control input-sm">
+                    <input type="submit" value="Поиск" class="btn btn-success btn-sm">
+                </form>
+            </div>      
+        </div>
+    </div>
+    <div class="container body-content">
+        <h3>Вы уверены, что хотите удалить это?</h3>
+        <hr>
+        <div>
+            <dl class="dl-horizontal">
+                <dt>Автор</dt>
+                <dd>Булгаков Михаил </dd>
+                <dt>Заголовок</dt>
+                <dd>Мастер и Маргарита</dd>
+                <dt>Описание</dt>
+                <dd>"Мастер и Маргарита", роман-загадка, книга, выходящая за рамки своего времени, заставляющая возвращаться к себе вновь и вновь. Вечное противоборство сил добра и зла, света и тьмы представлено на этих страницах в манере, так отличающей Булгакова от своих современников. Философская глубина сочетается с увлекательным сюжетом, ироничный взгляд на вещи с верой в вечные ценности, без которых невозможно представить жизнь человека. Фантастика и мистика вплетается в реалии московской жизни, в свою очередь чередуясь с романом Мастера о Понтии Пилате. Вся история рода человеческого с его неизменными пороками и добродетелями предстает на страницах одного из главных шедевров мировой литературы XX века.</dd>
+                <dt>Год публикации</dt>
+                <dd>1940</dd>
+                <dt>Количество страниц</dt>
+                <dd>576</dd>
+            </dl>
+            <form action="http://localhost:64037/Books/Delete/3" method="post">        
+                <div class="form-actions no-color">
+                        <input type="submit" value="Удалить" class="btn btn-danger"> |
+                        <a href="http://localhost:64037/">Вернуться к списку</a>
+                    </div>
+            </form>
+        </div>
+        <hr>
+        <footer>
+            <p>Каталог библиотеки. Copyright © 2019 Шуманский Дима.</p>
+            <p>Все права защищены.</p>
+        </footer>
+    </div>
+    <script src="./delete_book_files/jquery-3.3.1.js"></script>
+    <script src="./delete_book_files/bootstrap.js"></script>
+</body>
+</html>

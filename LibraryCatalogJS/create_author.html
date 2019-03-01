@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить автора – приложение ASP.NET</title>
+    <link href="./create_author_files/bootstrap.css" rel="stylesheet">
+    <link href="./create_author_files/site.css" rel="stylesheet">
+    <script src="./create_author_files/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" style="background-color:#337ab7; border-color:white;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:white;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="books.html" style="color:white">Каталог библиотеки</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav mr-auto">
+                    <li><a href="books.html" style="color:white">Книги</a></li>
+                    <li><a href="authors.html" style="color:white">Авторы</a></li>
+                </ul>
+                <form asp-controller="Books" asp-action="Index" class="form-inline navbar-right" style="margin-top:10px">
+                    <input type="text" name="search" placeholder="Поиск" class="form-control input-sm">
+                    <input type="submit" value="Поиск" class="btn btn-success btn-sm">
+                </form>
+            </div>      
+        </div>
+    </div>
+    <div class="container body-content">
+        <h2>Добавить автора</h2>
+        <hr>
+        <form action="http://localhost:64037/Authors/Create" method="post"><div class="form-horizontal">
+            
+            <div class="form-group">
+                <label class="control-label col-md-2">Фамилия</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="Surname" name="Surname" type="text" value="">
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Surname" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Имя</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="Name" name="Name" type="text" value="">
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Отчество</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="Patronymic" name="Patronymic" type="text" value="">
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Patronymic" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Добавить" class="btn btn-primary">
+                </div>
+            </div>
+        </div>
+        </form><div>
+            <a href="http://localhost:64037/Authors">Вернуться к списку</a>
+        </div>
+        <hr>
+        <footer>
+            <p>Каталог библиотеки. Copyright © 2019 Шуманский Дима.</p>
+            <p>Все права защищены.</p>
+        </footer>
+    </div>
+    <script src="./create_author_files/jquery-3.3.1.js"></script>
+    <script src="./create_author_files/bootstrap.js"></script>
+    <script src="./create_author_files/jquery.validate.js"></script>
+    <script src="./create_author_files/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>

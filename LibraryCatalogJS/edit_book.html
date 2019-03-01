@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактировать – приложение ASP.NET</title>
+    <link href="./edit_book_files/bootstrap.css" rel="stylesheet">
+    <link href="./edit_book_files/site.css" rel="stylesheet">
+    <script src="./edit_book_files/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" style="background-color:#337ab7; border-color:white;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:white;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="books.html" style="color:white">Каталог библиотеки</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav mr-auto">
+                    <li><a href="books.html" style="color:white">Книги</a></li>
+                    <li><a href="authors.html" style="color:white">Авторы</a></li>
+                </ul>
+                <form asp-controller="Books" asp-action="Index" class="form-inline navbar-right" style="margin-top:10px">
+                    <input type="text" name="search" placeholder="Поиск" class="form-control input-sm">
+                    <input type="submit" value="Поиск" class="btn btn-success btn-sm">
+                </form>
+            </div>      
+        </div>
+    </div>
+    <div class="container body-content">
+        <h2>Редактировать</h2>
+        <hr>
+        <form action="http://localhost:64037/Books/Edit/3" method="post" novalidate="novalidate">    <div class="form-horizontal">
+                
+                <input data-val="true" data-val-number="Значением поля Id должно быть число." data-val-required="Требуется поле Id." id="Id" name="Id" type="hidden" value="3">
+                <div class="form-group">
+                    <label class="control-label col-md-2">Заголовок</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="Title" name="Title" type="text" value="Мастер и Маргарита">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Title" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Автор</label>
+                    <div class="col-md-10">
+                        <select class="form-control" data-val="true" data-val-number="Значением поля AuthorId должно быть число." data-val-required="Требуется поле AuthorId." id="AuthorId" name="AuthorId"><option selected="selected" value="1">Булгаков Михаил </option>
+        <option value="2">Роулинг Джоан </option>
+        <option value="3">Митчелл Маргарет </option>
+        <option value="4">Никулин Юрий Владимирович</option>
+        <option value="5">Конан Дойл Артур </option>
+        <option value="7">aa b c</option>
+        </select>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="AuthorId" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Описание</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="Description" name="Description" type="text" value="&quot;Мастер и Маргарита&quot;, роман-загадка, книга, выходящая за рамки своего времени, заставляющая возвращаться к себе вновь и вновь. Вечное противоборство сил добра и зла, света и тьмы представлено на этих страницах в манере, так отличающей Булгакова от своих современников. Философская глубина сочетается с увлекательным сюжетом, ироничный взгляд на вещи с верой в вечные ценности, без которых невозможно представить жизнь человека. Фантастика и мистика вплетается в реалии московской жизни, в свою очередь чередуясь с романом Мастера о Понтии Пилате. Вся история рода человеческого с его неизменными пороками и добродетелями предстает на страницах одного из главных шедевров мировой литературы XX века.">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Год написания</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-number="Значением поля Year должно быть число." data-val-required="Требуется поле Year." id="Year" name="Year" type="number" value="1940">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Year" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Количество страниц</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-number="Значением поля NumPages должно быть число." data-val-required="Требуется поле NumPages." id="NumPages" name="NumPages" type="number" value="576">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="NumPages" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Сохранить" class="btn btn-primary">
+                    </div>
+                </div>
+            </div>
+        </form><div>
+            <a href="http://localhost:64037/">Вернуться к списку</a>
+        </div>
+        <hr>
+        <footer>
+            <p>Каталог библиотеки. Copyright © 2019 Шуманский Дима.</p>
+            <p>Все права защищены.</p>
+        </footer>
+    </div>
+    <script src="./edit_book_files/jquery-3.3.1.js"></script>
+    <script src="./edit_book_files/bootstrap.js"></script>
+    <script src="./edit_book_files/jquery.validate.js"></script>
+    <script src="./edit_book_files/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>

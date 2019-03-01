@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список авторов – приложение ASP.NET</title>
+    <link href="./authors_files/bootstrap.css" rel="stylesheet">
+    <link href="./authors_files/site.css" rel="stylesheet">
+    <script src="./authors_files/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" style="background-color:#337ab7; border-color:white;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:white;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="books.html" style="color:white">Каталог библиотеки</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav mr-auto">
+                    <li><a href="books.html" style="color:white">Книги</a></li>
+                    <li><a href="authors.html" style="color:white">Авторы</a></li>
+                </ul>
+                <form asp-controller="Books" asp-action="Index" class="form-inline navbar-right" style="margin-top:10px">
+                    <input type="text" name="search" placeholder="Поиск" class="form-control input-sm">
+                    <input type="submit" value="Поиск" class="btn btn-success btn-sm">
+                </form>
+            </div>      
+        </div>
+    </div>
+    <div class="container body-content">
+        <h2>Список авторов</h2>
+        <p>
+            <a href="http://localhost:64037/Authors/Create">Добавить автора</a>
+        </p>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <a href="http://localhost:64037/Authors/Details/1">Булгаков Михаил </a> <br>
+                    <a class="text-warning " href="http://localhost:64037/?search=%D0%91%D1%83%D0%BB%D0%B3%D0%B0%D0%BA%D0%BE%D0%B2">Список книг автора</a> <br>
+                </div>
+                <div class="col-sm-2">
+                    <a class="text-warning " href="http://localhost:64037/Authors/Edit/1">Редактировать</a> <br>
+                    <a class="text-danger" href="http://localhost:64037/Authors/Delete/1">Удалить</a>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-md-10">
+                    <a href="http://localhost:64037/Authors/Details/2">Роулинг Джоан </a> <br>
+                    <a class="text-warning " href="http://localhost:64037/?search=%D0%A0%D0%BE%D1%83%D0%BB%D0%B8%D0%BD%D0%B3">Список книг автора</a> <br>
+                </div>
+                <div class="col-sm-2">
+                    <a class="text-warning " href="http://localhost:64037/Authors/Edit/2">Редактировать</a> <br>
+                    <a class="text-danger" href="http://localhost:64037/Authors/Delete/2">Удалить</a>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-md-10">
+                    <a href="http://localhost:64037/Authors/Details/3">Митчелл Маргарет </a> <br>
+                    <a class="text-warning " href="http://localhost:64037/?search=%D0%9C%D0%B8%D1%82%D1%87%D0%B5%D0%BB%D0%BB">Список книг автора</a> <br>
+                </div>
+                <div class="col-sm-2">
+                    <a class="text-warning " href="http://localhost:64037/Authors/Edit/3">Редактировать</a> <br>
+                    <a class="text-danger" href="http://localhost:64037/Authors/Delete/3">Удалить</a>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-md-10">
+                    <a href="http://localhost:64037/Authors/Details/4">Никулин Юрий Владимирович</a> <br>
+                    <a class="text-warning " href="http://localhost:64037/?search=%D0%9D%D0%B8%D0%BA%D1%83%D0%BB%D0%B8%D0%BD">Список книг автора</a> <br>
+                </div>
+                <div class="col-sm-2">
+                    <a class="text-warning " href="http://localhost:64037/Authors/Edit/4">Редактировать</a> <br>
+                    <a class="text-danger" href="http://localhost:64037/Authors/Delete/4">Удалить</a>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-md-10">
+                    <a href="http://localhost:64037/Authors/Details/5">Конан Дойл Артур </a> <br>
+                    <a class="text-warning " href="http://localhost:64037/?search=%D0%9A%D0%BE%D0%BD%D0%B0%D0%BD%20%D0%94%D0%BE%D0%B9%D0%BB">Список книг автора</a> <br>
+                </div>
+                <div class="col-sm-2">
+                    <a class="text-warning " href="http://localhost:64037/Authors/Edit/5">Редактировать</a> <br>
+                    <a class="text-danger" href="http://localhost:64037/Authors/Delete/5">Удалить</a>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-md-10">
+                    <a href="http://localhost:64037/Authors/Details/7">aa b c</a> <br>
+                    <a class="text-warning " href="http://localhost:64037/?search=aa">Список книг автора</a> <br>
+                </div>
+                <div class="col-sm-2">
+                    <a class="text-warning " href="http://localhost:64037/Authors/Edit/7">Редактировать</a> <br>
+                    <a class="text-danger" href="http://localhost:64037/Authors/Delete/7">Удалить</a>
+                </div>
+            </div>
+            <hr>
+            <br>
+        </div>
+        <hr>
+        <footer>
+            <p>Каталог библиотеки. Copyright © 2019 Шуманский Дима.</p>
+            <p>Все права защищены.</p>
+        </footer>
+    </div>
+    <script src="./authors_files/jquery-3.3.1.js"></script>
+    <script src="./authors_files/bootstrap.js"></script>
+</body>
+</html>

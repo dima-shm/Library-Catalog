@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Access-Control-Allow-Origin" content="*" />
+    <meta name="Access-Control-Allow-Headers" content="*" />
+    <title>Каталог книг – приложение ASP.NET</title>
+    <link href="./books_files/bootstrap.css" rel="stylesheet">
+    <link href="./books_files/site.css" rel="stylesheet">
+    <script src="./books_files/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" style="background-color:#337ab7; border-color:white;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:white;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="books.html" style="color:white">Каталог библиотеки</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav mr-auto">
+                    <li><a href="books.html" style="color:white">Книги</a></li>
+                    <li><a href="authors.html" style="color:white">Авторы</a></li>
+                </ul>
+                <form asp-controller="Books" asp-action="Index" class="form-inline navbar-right" style="margin-top:10px">
+                    <input type="text" name="search" placeholder="Поиск" class="form-control input-sm">
+                    <input type="submit" value="Поиск" class="btn btn-success btn-sm">
+                </form>
+            </div>      
+        </div>
+    </div>
+    <div class="container body-content">
+        <h2>Каталог книг</h2>
+        <p>
+            <a href="create_book.html">Добавить книгу</a>
+        </p>
+        <hr>
+        <div class="container" id="books">
+        </div>
+        <hr>
+        <footer>
+            <p>Каталог библиотеки. Copyright © 2019 Шуманский Дима.</p>
+            <p>Все права защищены.</p>
+        </footer>
+    </div>
+    <script src="./books_files/jquery-3.3.1.js"></script>
+    <script src="./books_files/bootstrap.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var uri = 'http://localhost:60727/api/Books/';
+            $.ajax({
+                url: uri,
+                type: 'GET',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                dataType: "json",
+                success: function (data) {
+                    $.each(data, function(index,value) {
+                        $('#books').append("<div class='row'>" +
+                            "<div class='col-md-2'>" +
+                            "    <a href='http://localhost:64037/Books/Details/3'>" +
+                            "        <img style='width:150px; height:150px;' src='./books_files/book-icon.png'>" +
+                            "    </a>" +
+                            "</div>" +
+                            "<div class='col-md-8'>" +
+                            "    <h3><a href='http://localhost:64037/Books/Details/" + value['Id'] + "'>" + value['Title'] + "</a></h3>" +
+                            "    <p>Автор книги: <a href='http://localhost:64037/Authors/Details/" + value['AuthorId'] + "'>" + getAuthorName(value['AuthorId']) + "</a></p>" +
+                            "    <hr>" +
+                            "    <h4>Описание</h4>" +
+                            "    <h5>" + value['Description'] + "</h5>" +
+                            "    <hr>" +
+                            "    <h6>Год написания: " + value['Year'] + "</h6>" +
+                            "    <h6>Количество страниц: " + value['NumPages'] + "</h6>" +
+                            "</div>" +
+                            "<div class='col-sm-2'>" +
+                            "    <a class='text-warning' href='http://localhost:64037/Books/Edit/" + value['Id'] + "'>Редактировать</a> <br>" +
+                            "    <a class='text-danger' href='http://localhost:64037/Books/Delete/" + value['Id'] + "'>Удалить</a>" +
+                            "</div>" +
+                        "</div>" +
+                        "<hr>" +
+                        "<br>");
+                    });
+                }, 
+            });
+        });
+        function getAuthorName(id) {
+            $.ajax({
+                url: 'http://localhost:60727/api/Authors/' + id,
+                type: 'GET',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                dataType: "json",
+                success: function (data) {
+                    return data.Surname;
+                }
+            });
+        }
+        </script>
+</body>
+</html>

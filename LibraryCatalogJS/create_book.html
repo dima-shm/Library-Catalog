@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить книгу – приложение ASP.NET</title>
+    <link href="./create_book_files/bootstrap.css" rel="stylesheet">
+    <link href="./create_book_files/site.css" rel="stylesheet">
+    <script src="./create_book_files/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" style="background-color:#337ab7; border-color:white;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:white;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="books.html" style="color:white">Каталог библиотеки</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav mr-auto">
+                    <li><a href="books.html" style="color:white">Книги</a></li>
+                    <li><a href="authors.html" style="color:white">Авторы</a></li>
+                </ul>
+                <form asp-controller="Books" asp-action="Index" class="form-inline navbar-right" style="margin-top:10px">
+                    <input type="text" name="search" placeholder="Поиск" class="form-control input-sm">
+                    <input type="submit" value="Поиск" class="btn btn-success btn-sm">
+                </form>
+            </div>      
+        </div>
+    </div>
+    <div class="container body-content">
+        <h2>Добавить книгу</h2>
+        <hr>
+        <form action="http://localhost:64037/Books/Create" method="post">    <div class="form-horizontal">
+                
+                <div class="form-group">
+                    <label class="control-label col-md-2">Заголовок</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="Title" name="Title" type="text" value="">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Title" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Автор</label>
+                    <div class="col-md-10">
+                        <select class="form-control" data-val="true" data-val-number="Значением поля AuthorId должно быть число." data-val-required="Требуется поле AuthorId." id="AuthorId" name="AuthorId"><option value="1">Булгаков Михаил </option>
+        <option value="2">Роулинг Джоан </option>
+        <option value="3">Митчелл Маргарет </option>
+        <option value="4">Никулин Юрий Владимирович</option>
+        <option value="5">Конан Дойл Артур </option>
+        <option value="7">aa b c</option>
+        </select>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="AuthorId" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Описание</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="Description" name="Description" type="text" value="">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Год написания</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-number="Значением поля Year должно быть число." data-val-required="Требуется поле Year." id="Year" max="02/24/2019 19:02:53" min="1" name="Year" step="1" type="number" value="">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Year" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Количество страниц</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-number="Значением поля NumPages должно быть число." data-val-required="Требуется поле NumPages." id="NumPages" max="5000" min="1" name="NumPages" step="1" type="number" value="">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="NumPages" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Добавить" class="btn btn-primary">
+                    </div>
+                </div>
+            </div>
+        </form><div>
+            <a href="http://localhost:64037/">Вернуться к списку</a>
+        </div>
+        <hr>
+        <footer>
+            <p>Каталог библиотеки. Copyright © 2019 Шуманский Дима.</p>
+            <p>Все права защищены.</p>
+        </footer>
+    </div>
+    <script src="./create_book_files/jquery-3.3.1.js"></script>
+    <script src="./create_book_files/bootstrap.js"></script>  
+    <script src="./create_book_files/jquery-3.3.1.js"></script>
+</body>
+</html>
